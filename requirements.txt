@@ -6,4 +6,4 @@ django-admin-sortable2
 djangorestframework
 
 # Removed temporarly as is having compile issues
-#social-auth-app-django
+social-auth-app-django
