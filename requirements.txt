@@ -1,0 +1,7 @@
+# requirements.txt
+
+Django>=3.1.2
+
+social-auth-app-django = "*"
+ipython = "*"
+django-admin-sortable2 = "*"
