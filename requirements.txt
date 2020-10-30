@@ -3,6 +3,7 @@
 Django>=3.1.2
 ipython
 django-admin-sortable2
+djangorestframework
 
 # Removed temporarly as is having compile issues
 #social-auth-app-django
