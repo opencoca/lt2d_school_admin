@@ -25,7 +25,7 @@ SECRET_KEY = 'xt_o(=jdtoxv5#4u%+1d8+n#)#picxkkk%^grudqoege&&1)eb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['classadmin.test.openco.ca']
 
 
 REST_FRAMEWORK = {
