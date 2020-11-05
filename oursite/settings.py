@@ -43,6 +43,7 @@ REST_FRAMEWORK = {
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'classrooms.apps.ClassroomsConfig',
+    'corsheaders',
     'adminsortable2',
     'rest_framework',
     'django.contrib.admin',
@@ -54,6 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
