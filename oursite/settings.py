@@ -25,7 +25,12 @@ SECRET_KEY = 'xt_o(=jdtoxv5#4u%+1d8+n#)#picxkkk%^grudqoege&&1)eb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['classadmin.test.openco.ca']
+
+CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'classadmin.test.openco.ca',
+                 'camp.centrepreville.org',
+                 'classes.test.openco.ca']
 
 
 REST_FRAMEWORK = {
