@@ -23,6 +23,7 @@ class Classroom(models.Model):
     This represents a virtural classroom
     """
     name = models.CharField(max_length=200)
+    route = models.CharField(max_length=20, default='meet', editable=False)
     pub_date = models.DateTimeField('date published')
     breakout_rooms = IntegerRangeField(min_value=1, max_value=5)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
