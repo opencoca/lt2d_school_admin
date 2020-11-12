@@ -23,4 +23,4 @@ class RoomSerializer(serializers.HyperlinkedModelSerializer):
     classroom = ClassroomSerializer(read_only = True)
     class Meta:
         model = Room
-        fields = ['name','route','address','classroom']
+        fields = ['name','route','meet','classroom']
