@@ -6,15 +6,16 @@ from rest_framework import permissions
 from django.core import serializers
 from django.http import HttpResponse
 
-from .models import Classroom, Teacher, App
-from .serializers import ClassroomSerializer
+from .models import Room, Classroom, Teacher, App
+from .serializers import RoomSerializer
 
 class ClassroomViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows classrooms to be viewed or edited.
     """
-    queryset = Classroom.objects.all().order_by('-pub_date')
-    serializer_class = ClassroomSerializer
+    #queryset = Classroom.objects.all().order_by('-pub_date')
+    queryset = Room.objects.all()
+    serializer_class = RoomSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 def list(request):

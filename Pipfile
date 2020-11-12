@@ -12,6 +12,7 @@ djangorestframework = "*"
 social-auth-app-django = "*"
 Django = ">=3.1.2"
 django-cors-headers = "*"
+django-reverse-admin = "*"
 
 [requires]
 python_version = "3.8"

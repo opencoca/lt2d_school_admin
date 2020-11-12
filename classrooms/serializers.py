@@ -1,4 +1,4 @@
-from .models import Classroom, Teacher, App
+from .models import Room, Classroom, Teacher, App
 from rest_framework import serializers
 
 class TeacherSerializer(serializers.ModelSerializer):
@@ -11,10 +11,16 @@ class AppSerializer(serializers.ModelSerializer):
         model = App
         fields = ['name', 'logo', 'iframe']
 
-class ClassroomSerializer(serializers.HyperlinkedModelSerializer):
+class ClassroomSerializer(serializers.ModelSerializer):
     teacher_set = TeacherSerializer(many=True)
     app_set = AppSerializer(many=True)
 
     class Meta:
         model = Classroom
-        fields = ['name', 'route','pub_date', 'breakout_rooms', 'order', 'teacher_set', 'taught_by', 'app_set']
+        fields = ['name','taught_by','address', 'teacher_set', 'app_set']
+
+class RoomSerializer(serializers.HyperlinkedModelSerializer):
+    classroom = ClassroomSerializer(read_only = True)
+    class Meta:
+        model = Room
+        fields = ['name','route','address','classroom']
