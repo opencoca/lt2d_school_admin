@@ -23,7 +23,7 @@ class RoomAdmin(SortableAdminMixin, admin.ModelAdmin):
 class ClassroomAdmin(SortableAdminMixin, ReverseModelAdmin, admin.ModelAdmin):
     model = Classroom
     inline_type = 'tabular'
-    inline_reverse = [('room', {'fields': ['name','address']})]
+    inline_reverse = [('room', {'fields': ['name','meet']})]
 #    list_editable = ('room', )
     list_display = ('name',  'breakout_rooms', 
                     'taught_by', 'recent_class')

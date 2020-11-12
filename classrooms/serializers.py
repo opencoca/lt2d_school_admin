@@ -17,7 +17,7 @@ class ClassroomSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Classroom
-        fields = ['name','taught_by','address', 'teacher_set', 'app_set']
+        fields = '__all__'
 
 class RoomSerializer(serializers.HyperlinkedModelSerializer):
     classroom = ClassroomSerializer(read_only = True)

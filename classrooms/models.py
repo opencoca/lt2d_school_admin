@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from dataclasses import dataclass, field
+from django.template.defaultfilters import slugify
 from django.utils import timezone
 
 class IntegerRangeField(models.IntegerField):
@@ -23,7 +24,7 @@ class Room(models.Model):
     This represents a virtual room
     """
     name = models.CharField(max_length=50)
-    address = models.CharField(max_length=80)
+    meet = models.SlugField(max_length=80, allow_unicode=True, blank=True, unique=True)
     route = models.CharField(max_length=20, default='meet', editable=False)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
@@ -33,6 +34,11 @@ class Room(models.Model):
 
     def __str__(self):
         return "%s Room" % self.name
+
+    def save(self, *args, **kwargs): # new
+        if not self.meet:
+            self.meet = slugify(self.name)
+        return super().save(*args, **kwargs)
 
 
 class Classroom(models.Model):
@@ -58,8 +64,8 @@ class Classroom(models.Model):
     def name(self):
         return self.room.name
 
-    def address(self):
-        return self.room.address
+    def meet(self):
+        return self.room.meet
 
     def taught_by(self):
         self.short_description = 'Teacher(s)'
