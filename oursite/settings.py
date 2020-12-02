@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -44,6 +45,7 @@ REST_FRAMEWORK = {
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'classrooms.apps.ClassroomsConfig',
+    'studio.apps.StudioConfig',
     'corsheaders',
     'adminsortable2',
     'rest_framework',
@@ -130,6 +132,9 @@ USE_L10N = True
 
 USE_TZ = True
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR, "media_root")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
