@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'classrooms.apps.ClassroomsConfig',
     'studio.apps.StudioConfig',
+    'courses.apps.CoursesConfig',
     'corsheaders',
     'adminsortable2',
     'rest_framework',
