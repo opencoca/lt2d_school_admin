@@ -29,10 +29,10 @@ class Syllabus(models.Model):
 
     class Meta(object):
         ordering = ['order']
-        verbose_name_plural = "0. Syllabus"
+        verbose_name_plural = "Syllabus"
 
     def __str__(self):
-        return "%s Room" % self.name
+        return "%s Stllabus" % self.name
 
     def save(self, *args, **kwargs): # new
         """
@@ -45,7 +45,6 @@ class Syllabus(models.Model):
 
 class Course(models.Model):
     """
-    This represents a virtural classroom
     """
     syllabus  = models.OneToOneField(
         Syllabus,
@@ -57,18 +56,15 @@ class Course(models.Model):
 
     class Meta(object):
         ordering = ['order']
-        verbose_name_plural = "1. Course"
+        #verbose_name_plural = "1. Course"
 
     def __str__(self):
-        return self.room.name
+        return self.syllabus.name
 
     def name(self):
-        return self.room.name
+        return self.syllabus.name
 
-    def meet(self):
-        return self.room.meet
-
-    def recent_class(self):
+    def recent_course(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=180)
 
 class Lession(models.Model):
@@ -82,7 +78,7 @@ class Lession(models.Model):
 
     class Meta(object):
         ordering = ['order']
-        verbose_name_plural = "2. Lessions"
+        #verbose_name_plural = "2. Lessions"
 
     def __str__(self):
         return self.title
@@ -95,7 +91,7 @@ class Page(models.Model):
 
     class Meta(object):
         ordering = ['order']
-        verbose_name_plural = "2. Pages"
+        #verbose_name_plural = "2. Pages"
 
     def __str__(self):
         return self.title

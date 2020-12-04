@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'classrooms.apps.ClassroomsConfig',
     'studio.apps.StudioConfig',
     'courses.apps.CoursesConfig',
+    'django_baker',
     'corsheaders',
     'adminsortable2',
     'rest_framework',
