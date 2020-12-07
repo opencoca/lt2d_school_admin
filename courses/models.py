@@ -1,4 +1,5 @@
 import datetime
+from django.urls import reverse
 
 from django.db import models
 from dataclasses import dataclass, field
@@ -103,8 +104,8 @@ class Snap(models.Model):
     subtile = models.CharField(max_length=200)
     description = models.CharField(max_length=500)
     page = models.ManyToManyField(Lession, blank=True)
-    slug = models.SlugField(unique=True)
-    videofile= models.FileField(upload_to='videos/%Y/%m/%d/', null=True, verbose_name="")
+    slug = models.SlugField(unique=True, blank=True)
+    videofile= models.FileField(upload_to='snap/%Y/%m/%d/', null=True, verbose_name="")
 #    timestamp  = models.DateTimeField('date published')
 #    timestamp.editable = True
 
@@ -112,7 +113,7 @@ class Snap(models.Model):
         ordering = ['slug']
 
     def get_absolute_url(self):
-        return reverse ("deploy:detail", kwargs={"slug":self.slug})
+        return reverse ("snap_detail", kwargs={"slug":self.slug})
 
     def __str__(self):
         return self.title + ": " + str(self.id)

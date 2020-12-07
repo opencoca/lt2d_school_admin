@@ -1,0 +1,14 @@
+{% extends "courses/snap_base.html" %}
+
+{% block title %}
+    {{ snap }}
+{% endblock %}
+
+{% block content %}
+    <h1><a href={% url "courses:snap_list" %}>Snap</a></h1>
+    <h2>{{ snap }} | <a href={% url "courses:snap_update" snap.slug %}>Update</a> | 
+    <form style="display:inline;" action={% url "courses:snap_delete" snap.slug %} method="post" onsubmit="return confirm('Are you sure you want to delete {{ snap }}?')">{% csrf_token %}
+    <input type="submit" value="Delete" />
+    </form>
+    </h2>
+{% endblock %}
