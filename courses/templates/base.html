@@ -9,7 +9,7 @@
       <h1><a href="/courses/">Courses</a></h1>
     </div>
 
-    <div class="content container">
+    <div id="swup" class="content container transition-fade">
       <div class="row">
         <div class="col-md-8">
           {% block content %}
@@ -17,5 +17,7 @@
         </div>
       </div>
     </div>
+    <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>
+    <script>const swup = new Swup();</script>
   </body>
 </html>

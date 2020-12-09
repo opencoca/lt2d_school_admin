@@ -98,7 +98,7 @@ class SnapDetailView(DetailView):
 class SnapCreateView(CreateView):
     model = Snap
     form_class = SnapForm
-    # fields = ['title', 'subtile', 'description', 'slug', 'videofile']
+    # fields = ['title', 'subtile', 'description', 'slug', 'file']
     template_name = "courses/snap_create.html"
     success_url = reverse_lazy("snap_list")
 
@@ -151,7 +151,7 @@ class SnapCreateView(CreateView):
 class SnapUpdateView(UpdateView):
     model = Snap
     form_class = SnapForm
-    # fields = ['title', 'subtile', 'description', 'slug', 'videofile']
+    # fields = ['title', 'subtile', 'description', 'slug', 'file']
     template_name = "courses/snap_update.html"
     initial = {}
     slug_field = 'slug'

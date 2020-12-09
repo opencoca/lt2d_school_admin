@@ -105,7 +105,7 @@ class Snap(models.Model):
     description = models.CharField(max_length=500)
     page = models.ManyToManyField(Lession, blank=True)
     slug = models.SlugField(unique=True, blank=True)
-    videofile= models.FileField(upload_to='snap/%Y/%m/%d/', null=True, verbose_name="")
+    file = models.FileField(upload_to='snap/%Y/%m/%d/', null=True, verbose_name="")
 #    timestamp  = models.DateTimeField('date published')
 #    timestamp.editable = True
 

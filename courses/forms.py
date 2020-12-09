@@ -178,7 +178,7 @@ class SnapForm(forms.ModelForm):
 
     class Meta:
         model = Snap
-        fields = ['title', 'subtile', 'description', 'slug', 'videofile']
+        fields = ['title', 'subtile', 'description', 'slug', 'file']
         exclude = []
         widgets = None
         localized_fields = None
@@ -211,9 +211,9 @@ class SnapForm(forms.ModelForm):
         slug = self.cleaned_data.get("slug", None)
         return slug
 
-    def clean_videofile(self):
-        videofile = self.cleaned_data.get("videofile", None)
-        return videofile
+    def clean_file(self):
+        file = self.cleaned_data.get("file", None)
+        return file
 
     def clean(self):
         return super(SnapForm, self).clean()
