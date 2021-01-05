@@ -1,7 +1,7 @@
 # lt2d_school_admin
 LT2D School Admin allows for the creation and managgment of LT2D
 classrooms, teachers, and apps. These are then reported to users as a
-json API.
+REST json API.
 
 To simplify deployment we recomend using Caprover
 
