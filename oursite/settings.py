@@ -33,12 +33,13 @@ ALLOWED_HOSTS = ['*',
                  'classes.test.openco.ca',
                  'classadmin.test.openco.ca',
                  'camp.centrepreville.org',
-                 'classes.test.openco.ca']
+                 'classes.test.openco.ca',
+                 'api.centrepreville.org']
 
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 100
 }
 
 # Application definition
