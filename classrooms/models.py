@@ -29,7 +29,8 @@ class Room(models.Model):
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     class Meta(object):
-        ordering = ['order']
+        #ordering = ['order']
+        ordering = ['classroom__order']
         verbose_name_plural = "0. Rooms"
 
     def __str__(self):

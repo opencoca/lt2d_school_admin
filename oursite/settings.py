@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -27,7 +28,8 @@ DEBUG = True
 
 
 CORS_ORIGIN_ALLOW_ALL = True
-ALLOWED_HOSTS = ['127.0.0.1',
+ALLOWED_HOSTS = ['*',
+                 '127.0.0.1',
                  'classes.test.openco.ca',
                  'classadmin.test.openco.ca',
                  'camp.centrepreville.org',
@@ -36,7 +38,7 @@ ALLOWED_HOSTS = ['127.0.0.1',
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 100
 }
 
 # Application definition
@@ -44,6 +46,9 @@ REST_FRAMEWORK = {
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'classrooms.apps.ClassroomsConfig',
+    'studio.apps.StudioConfig',
+    'courses.apps.CoursesConfig',
+    'django_baker',
     'corsheaders',
     'adminsortable2',
     'rest_framework',
@@ -131,7 +136,20 @@ USE_L10N = True
 USE_TZ = True
 
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+print(MEDIA_ROOT)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+#STATIC_URL = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, "static")
+#print(STATIC_ROOT)
+
+
+STATIC_ROOT = ''
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = ( os.path.join('static'), )
