@@ -14,13 +14,16 @@ class AppInline(admin.TabularInline):
 #@admin.register(Room)
 #class RoomAdmin(SortableAdminMixin, admin.ModelAdmin):
 #    model = Room
+@admin.register(Platform)
+class PlatformAdmin(SortableAdminMixin, admin.ModelAdmin):
+    model = Platform
 
 @admin.register(Classroom)
 class ClassroomAdmin(SortableAdminMixin, ReverseModelAdmin, admin.ModelAdmin):
     model = Classroom
     inline_type = 'tabular'
     inline_reverse = [('room', {'fields': ['name','meet']})]
-    list_display = ('name',  'breakout_rooms', 
+    list_display = ('name',  'breakout_rooms',
                     'taught_by', 'recent_class')
     inlines = [
         TeacherInline,

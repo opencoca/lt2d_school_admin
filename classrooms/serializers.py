@@ -1,4 +1,4 @@
-from .models import Room, Classroom, Teacher, App
+from .models import Room, Classroom, Teacher, App, Platform
 from rest_framework import serializers
 
 class CustomSerializer(serializers.ModelSerializer):
@@ -10,6 +10,11 @@ class CustomSerializer(serializers.ModelSerializer):
             return expanded_fields + self.Meta.extra_fields
         else:
             return expanded_fields
+
+class PlatformSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Platform
+        fields = '__all__'
 
 class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
@@ -24,6 +29,7 @@ class AppSerializer(serializers.ModelSerializer):
 class ClassroomSerializer(CustomSerializer):
     teacher_set = TeacherSerializer(many=True)
     app_set = AppSerializer(many=True)
+    platform = PlatformSerializer(read_only=True)
 
     class Meta:
         model = Classroom

@@ -41,6 +41,22 @@ class Room(models.Model):
             self.meet = slugify(self.name)
         return super().save(*args, **kwargs)
 
+class Platform(models.Model):
+    """
+    Clasrooms may have one meeting platform per room
+    """
+    name = models.CharField(max_length=200)
+    domain = models.URLField(max_length=200)
+    paramiters = models.CharField(max_length=1000)
+    logo   = models.URLField(max_length=200)
+    order = models.PositiveIntegerField(default=0, blank=False, null=False)
+
+    class Meta(object):
+        ordering = ['order']
+        verbose_name_plural = "4. Meeting Platforms"
+
+    def __str__(self):
+        return self.name
 
 class Classroom(models.Model):
     """
@@ -53,6 +69,7 @@ class Classroom(models.Model):
     )
     pub_date = models.DateTimeField('date published')
     breakout_rooms = IntegerRangeField(min_value=1, max_value=5)
+    platform = models.ForeignKey(Platform, on_delete=models.CASCADE)
     order = models.PositiveIntegerField(default=0, blank=False, null=False)
 
     class Meta(object):
