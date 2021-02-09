@@ -7,4 +7,5 @@ To simplify deployment we recomend using Caprover
 
 Log in and have fun creating classes for the api to report.
 
-In this our version 1.1.0 release we've included an example database
+In this our version 1.1.0 release we've included an example database and
+an example admin user with the password 'P86`"AZcc\gEYjU
