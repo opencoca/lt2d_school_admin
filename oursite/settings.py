@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['*',
                  'classes.test.openco.ca',
                  'classadmin.test.openco.ca',
                  'camp.centrepreville.org',
-                 'classes.test.openco.ca',
                  'api.centrepreville.org']
 
 
