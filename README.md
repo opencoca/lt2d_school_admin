@@ -6,7 +6,7 @@ REST json API.
 
 Have fun creating classes for the api to report.
 
-In this our version 1.1.2.1 release we've included an example database and
+In this our version 1.1.2.1 release we've included an example database.
 
 # License
 Copyright 2019–2021 12787326 Canada Inc.
