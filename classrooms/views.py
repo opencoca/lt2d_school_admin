@@ -14,7 +14,7 @@ class ClassroomViewSet(viewsets.ModelViewSet):
     API endpoint that allows classrooms to be viewed or edited.
     """
     #queryset = Classroom.objects.all().order_by('-pub_date')
-    queryset = Room.objects.all()
+    queryset = Room.objects.exclude(classroom=None)
     serializer_class = RoomSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
