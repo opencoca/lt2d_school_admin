@@ -5,7 +5,7 @@ REST json API.
 
 Have fun creating classes for the api to report.
 
-In this our version 1.1.2.1 release we've included an example database.
+In this our version 1.1.2.2 release we've included an example database.
 
 ### Backup our production instance 
 The following command requires tweaking
