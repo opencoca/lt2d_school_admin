@@ -1,4 +1,8 @@
-# lt2d_school_admin
+# LT2D School Admin ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-17ff09?style=flat&logo=django&logoColor=white&color=17ff09&labelColor=gray)
+
+![Languages](https://img.shields.io/github/languages/count/opencoca/lt2d_school_admin)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=opencoca_lt2d_school_admin&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=opencoca_lt2d_school_admin)
+
 LT2D School Admin allows for the creation and managgment of LT2D
 classrooms, teachers, and apps. These are then reported to users as a
 REST json API.
