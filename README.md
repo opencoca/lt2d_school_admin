@@ -9,7 +9,7 @@ REST json API.
 
 Have fun creating classes for the api to report.
 
-In this our version 1.1.2.2 release we've included an example database.
+In this our version v1.1.3 release, including the fall 2021 DB.
 
 ### Backup our production instance 
 
