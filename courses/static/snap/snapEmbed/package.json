@@ -3,7 +3,7 @@
   "description": "Compress the Mirobot UI",
   "version": "1.0.0",
   "dependencies": {
-    "glob": "^7.1.6",
+    "glob": "^7.2.0",
     "gulp": "^4.0.2",
     "html-minifier": "^1.2.0",
     "mime-types": "^2.1.10",
