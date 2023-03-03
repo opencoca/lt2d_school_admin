@@ -13,7 +13,7 @@ django-cors-headers==3.5.0
 django-reverse-admin==2.9.3
 djangorestframework==3.12.2
 idna==2.10
-ipython==7.19.0
+ipython==8.10.0
 ipython-genutils==0.2.0
 jedi==0.17.2
 oauthlib==3.1.0
