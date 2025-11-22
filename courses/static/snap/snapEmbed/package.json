@@ -5,7 +5,7 @@
   "dependencies": {
     "glob": "^7.1.6",
     "gulp": "^4.0.2",
-    "html-minifier": "^1.2.0",
+    "html-minifier": "^1.5.0",
     "mime-types": "^2.1.10",
     "web-resource-inliner": "^1.2.1"
   }
