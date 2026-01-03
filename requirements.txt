@@ -36,3 +36,4 @@ sqlparse==0.4.1
 traitlets==5.0.5
 urllib3==1.26.1
 wcwidth==0.2.5
+setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
